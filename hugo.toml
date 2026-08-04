@@ -17,9 +17,7 @@ defaultContentLanguageInSubdir = false
       [languages.en.params.contact]
         address = "Tabriz University of Medical Sciences, Tabriz, Iran"
         phone = "+98 2193113900"
-        phone_support = "+98 2193113900"
         email = "ruiyn.official@gmail.com"
-        email_support = "ruiyn.official@gmail.com"
         business_hours = "Saturday-Wednesday: 8:00 AM - 6:00 PM"
         business_hours_extra = "Thursday: 8:00 AM - 4:00 PM"
 
@@ -52,6 +50,38 @@ defaultContentLanguageInSubdir = false
         image = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80"
         title = "Patient Monitoring"
         description = "Real-time vital sign tracking for enhanced patient care"
+
+      [languages.en.params.team]
+        [[languages.en.params.team.members]]
+          name = "Hadi Raji"
+          role = "Founder & CEO"
+          phone = "+98 21 9311 3900 - 0"
+          email = "m.rezaei@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.en.params.team.members]]
+          name = "Dr. Fatemeh Ahmadi"
+          role = "Chief Scientific Officer"
+          phone = "+98 21 9311 3901"
+          email = "f.ahmadi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.en.params.team.members]]
+          name = "Dr. Ali Karimi"
+          role = "Medical Director"
+          phone = "+98 21 9311 3902"
+          email = "a.karimi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.en.params.team.members]]
+          name = "Dr. Sara Mohammadi"
+          role = "Head of R&D"
+          phone = "+98 21 9311 3903"
+          email = "s.mohammadi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.en.params.team.members]]
+          name = "Dr. Hassan Ghorbani"
+          role = "Regulatory Affairs Director"
+          phone = "+98 21 9311 3904"
+          email = "h.ghorbani@ruiyn.com"
+          image = "img/soon.jpg"
 
     [[languages.en.menu.main]]
       name = "Home"
@@ -89,9 +119,7 @@ defaultContentLanguageInSubdir = false
       [languages.fa.params.contact]
         address = "تبریز - خیابان پاستورقدیم (مابین شریعتی ولاله زار) مجتمع مراکز رشد فناوري فرآورده هاي دارویی دانشگاه علوم پزشکی تبریز"
         phone = "+98 2193113900"
-        phone_support = "+98 2193113900"
         email = "ruiyn.official@gmail.com"
-        email_support = "ruiyn.official@gmail.com"
         business_hours = "شنبه تا چهارشنبه ۸ الی ۱۸"
         business_hours_extra = "پنجشنبه ۸ الی ۱۶"
 
@@ -125,6 +153,38 @@ defaultContentLanguageInSubdir = false
         title = "مانیتورینگ بیمار"
         description = "ردیابی علائم حیاتی در زمان واقعی برای بهبود مراقبت از بیمار"
 
+      [languages.fa.params.team]
+        [[languages.fa.params.team.members]]
+          name = "دکتر محمد رضایی"
+          role = "موسس و مدیر عامل"
+          phone = "+98 21 9311 3900"
+          email = "m.rezaei@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.fa.params.team.members]]
+          name = "دکتر فاطمه احمدی"
+          role = "مدیر علمی ارشد"
+          phone = "+98 21 9311 3901"
+          email = "f.ahmadi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.fa.params.team.members]]
+          name = "دکتر علی کریمی"
+          role = "مدیر پزشکی"
+          phone = "+98 21 9311 3902"
+          email = "a.karimi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.fa.params.team.members]]
+          name = "دکتر سارا محمدی"
+          role = "مدیر تحقیق و توسعه"
+          phone = "+98 21 9311 3903"
+          email = "s.mohammadi@ruiyn.com"
+          image = "img/soon.jpg"
+        [[languages.fa.params.team.members]]
+          name = "دکتر حسن قربانی"
+          role = "مدیر امور رگولاتوری"
+          phone = "+98 21 9311 3904"
+          email = "h.ghorbani@ruiyn.com"
+          image = "img/soon.jpg"
+
     [[languages.fa.menu.main]]
       name = "خانه"
       url = "/"
@@ -155,8 +215,20 @@ defaultContentLanguageInSubdir = false
 [params.contact]
   address = "Tabriz University of Medical Sciences<br>Tabriz, Iran"
   phone = "+98 2193113900"
-  phone_support = "+98 2193113900"
   email = "ruiyn.official@gmail.com"
-  email_support = "ruiyn.official@gmail.com"
   business_hours = "Saturday-Wednesday: 8:00 AM - 6:00 PM"
   business_hours_extra = "Thursday: 8:00 AM - 4:00 PM"
+
+# Gallery images (product images + event images from static/img/events/)
+[[params.gallery_images]]
+  image = "img/events/event1.jpg"
+  title = "Medical Conference 2024"
+  link = ""
+[[params.gallery_images]]
+  image = "img/events/event2.jpg"
+  title = "Product Launch Event"
+  link = ""
+[[params.gallery_images]]
+  image = "img/events/event3.jpg"
+  title = "Healthcare Expo"
+  link = ""

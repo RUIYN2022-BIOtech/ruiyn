@@ -84,3 +84,13 @@
   translation: "رعایت بالاترین استانداردهای کیفیت و ایمنی"
 - id: map_headquarters
   translation: "دفتر مرکزی رویین"
+- id: our_team
+  translation: "تیم ما"
+- id: team_subtitle
+  translation: "افراد پشت نوآوری RUIYN"
+- id: role
+  translation: "نقش"
+- id: phone
+  translation: "تلفن"
+- id: email
+  translation: "ایمیل"

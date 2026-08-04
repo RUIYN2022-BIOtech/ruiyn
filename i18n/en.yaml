@@ -84,3 +84,13 @@
   translation: "Meeting the highest standards of quality and safety"
 - id: map_headquarters
   translation: "Ruiyn Headquarters"
+- id: our_team
+  translation: "Our Team"
+- id: team_subtitle
+  translation: "The people behind RUIYN's innovation"
+- id: role
+  translation: "Role"
+- id: phone
+  translation: "Phone"
+- id: email
+  translation: "Email"
