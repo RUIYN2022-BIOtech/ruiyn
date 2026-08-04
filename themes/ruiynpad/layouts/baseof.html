@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}" dir="{{ if eq .Language.Lang "fa" }}rtl{{ else }}ltr{{ end }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class='{{ if eq .Language.Lang "fa" }}rtl{{ else }}ltr{{ end }}'>
+    {{ partial "header.html" . }}
+    
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ partial "footer.html" . }}
+
+    <!-- Main Scripts -->
+    {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}"></script>
+
+    <!-- Additional scripts -->
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

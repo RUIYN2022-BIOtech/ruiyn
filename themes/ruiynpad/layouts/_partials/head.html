@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+
+<!-- Alternate language links -->
+{{ range .AllTranslations }}
+<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
+{{ end }}
+<link rel="alternate" hreflang="x-default" href="{{ .Site.Home.Permalink }}">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Vazir Font for Persian -->
+{{ if eq .Language.Lang "fa" }}
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+{{ end }}
+
+<!-- Main CSS Bundle -->
+{{ $base := resources.Get "css/modules/base.css" }}
+{{ $layout := resources.Get "css/modules/layout.css" }}
+{{ $components := resources.Get "css/modules/components.css" }}
+{{ $pages := resources.Get "css/modules/pages.css" }}
+
+{{ $style := slice $base $layout $components $pages | resources.Concat "css/style.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+<!-- RTL CSS for Persian -->
+{{ if eq .Language.Lang "fa" }}
+{{ $rtlCSS := resources.Get "css/rtl.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $rtlCSS.RelPermalink }}">
+{{ end }}

@@ -1,0 +1,118 @@
+{{ define "main" }}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <img src='{{ "img/ruiyn-logo2.png" | absURL }}' alt="Ruiyn Logo" class="hero-logo-img">
+                </div>
+                <h1>{{ .Params.hero_title | default "Innovative Medical Solutions" }}</h1>
+                <p>{{ .Params.hero_description | default "Delivering cutting-edge medical equipment worldwide" }}</p>
+                <div class="hero-btns">
+                    <a href='{{ "products" | absURL }}' class="btn">{{ .Params.hero_button_primary | default "Explore Products" }}</a>
+                    <a href='{{ "contact" | absURL }}' class="btn btn-outline">{{ .Params.hero_button_secondary | default "Contact Us" }}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>{{ .Params.features_title | default "Our Core Values" }}</h2>
+                <p>{{ .Params.features_subtitle | default "Driving excellence in healthcare" }}</p>
+            </div>
+            
+            <div class="features-grid">
+                {{ range .Site.Params.features }}
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="{{ .icon }}"></i>
+                    </div>
+                    <h3>{{ .title }}</h3>
+                    <p>{{ .description }}</p>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>{{ i18n "our_products" }}</h2>
+            </div>
+            
+            <div class="gallery-slider">
+                <div class="slides" id="slides">
+                    {{ $count := 0 }}
+                    {{ range (where .Site.RegularPages "Section" "products") }}
+                    {{ if .Params.image }}
+                    <div class="slide">
+                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                        <div class="slide-caption">
+                            <h3>{{ .Title }}</h3>
+                            <a href="{{ .Permalink }}" class="btn-slide" aria-label="{{ i18n "view_details" }}">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    {{ $count = add $count 1 }}
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            
+            <div class="slider-nav" id="sliderNav">
+                {{ $dotCount := 0 }}
+                {{ range (where .Site.RegularPages "Section" "products") }}
+                {{ if .Params.image }}
+                <div class="slider-dot {{ if eq $dotCount 0 }}active{{ end }}" data-index="{{ $dotCount }}"></div>
+                {{ $dotCount = add $dotCount 1 }}
+                {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>{{ .Params.map_title | default "Our Headquarters" }}</h2>
+            </div>
+        </div>
+        
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d339.8671669137972!2d46.276804165356545!3d38.06266384567055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401a0548a224d441%3A0x89326250fc6d010b!2z2YXYsdqp2LIg2LHYtNivINmB2LHYp9mI2LHYr9mH4oCM2YfYp9uMINiv2KfYsdmI24zbjCDYudmE2YjZhSDZvtiy2LTaqduMINiq2KjYsduM2LI!5e0!3m2!1sen!2s!4v1758911370342!5m2!1sen!2s" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="map-overlay text-center">
+                <h3>{{ i18n "map_headquarters" }}</h3>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ .Site.Params.contact.address | safeHTML }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span><bdi dir="ltr">{{ .Site.Params.contact.phone }}</bdi></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><bdi dir="ltr">{{ .Site.Params.contact.email }}</bdi></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>{{ .Site.Params.contact.business_hours }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}
+
+{{ define "scripts" }}
+<!-- Scripts handled by main.js -->
+{{ end }}

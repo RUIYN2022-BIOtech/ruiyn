@@ -1,0 +1,68 @@
+<footer>
+    <style>
+        
+    </style>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Logo and Description Column -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <a href="{{ .Site.BaseURL }}">
+                        <img src='{{ "img/ruiyn-logo1.png" | absURL }}' alt="Ruiyn Pad" class="logo-img" style="height: 50px;">
+                    </a>
+                </div>
+                <p class="footer-description">{{ i18n "footer_description" }}</p>
+                <div class="social-links">
+                    <a href="https://wa.me/989123456789" target="_blank" rel="noopener" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/RUIYN_official" target="_blank" rel="noopener" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="https://instagram.com/ruiynpad" target="_blank" rel="noopener" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="footer-col">
+                <h3>{{ i18n "quick_links" }}</h3>
+                <ul class="footer-links">
+                    <li><a href='{{ "/" | absLangURL }}'>{{ i18n "home" }}</a></li>
+                    <li><a href='{{ "products" | absLangURL }}'>{{ i18n "products" }}</a></li>
+                    <li><a href='{{ "about" | absLangURL }}'>{{ i18n "about" }}</a></li>
+                    <li><a href='{{ "contact" | absLangURL }}'>{{ i18n "contact" }}</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Column -->
+            <div class="footer-col">
+                <h3>{{ i18n "contact_info" }}</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>{{ i18n "location" }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span><bdi dir="ltr">{{ .Site.Params.contact.phone }}</bdi></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>{{ .Site.Params.contact.email }}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <span>{{ strings.TrimPrefix "https://" (strings.TrimPrefix "http://" .Site.BaseURL) | strings.TrimSuffix "/" }}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; {{ now.Format "2006" }} Biotech Co. {{ i18n "all_rights_reserved" }}</p>
+        </div>
+    </div>
+</footer>

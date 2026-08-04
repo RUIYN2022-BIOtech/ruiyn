@@ -1,0 +1,96 @@
+/* RTL specific styles */
+.rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazirmatn', sans-serif;
+}
+
+/* Ensure centered elements stay centered in RTL */
+.rtl .hero-content,
+.rtl .text-center,
+.rtl .slider-nav,
+.rtl .category-filter,
+.rtl .tabs,
+.rtl h2 {
+    text-align: center;
+}
+
+.rtl .about-content-centered,
+.rtl .contact-info,
+.rtl .product-info,
+.rtl .office-card,
+.rtl .mission-card,
+.rtl .team-member,
+.rtl .cert-item {
+    text-align: right;
+}
+
+.rtl .about-content-centered ul {
+    text-align: right;
+}
+
+.rtl .about-content-centered li {
+    padding-left: 0;
+    padding-right: 1.5rem;
+}
+
+.rtl .about-content-centered li:before {
+    left: auto;
+    right: 0;
+}
+
+.rtl .info-card,
+.rtl .milestone,
+.rtl .meta-item {
+    flex-direction: row-reverse;
+}
+
+.rtl nav ul li {
+    margin-left: 0;
+    margin-right: 32px;
+}
+
+.rtl .footer-col h3:after {
+    left: auto;
+    right: 0;
+}
+
+.rtl .map-overlay {
+    left: auto;
+    right: 50px;
+    max-width: 480px;
+}
+
+.rtl .map-overlay .contact-info .contact-item {
+    justify-content: flex-start;
+    text-align: right;
+}
+
+.rtl .map-overlay .contact-info .contact-item span {
+    flex: 1;
+    text-align: right;
+}
+
+.rtl .footer-links a:hover {
+    justify-content: flex-end;
+}
+
+.rtl .footer-links a:hover {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.rtl footer .contact-item:hover {
+    transform: translateX(-5px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .rtl nav ul li {
+        margin-right: 0;
+    }
+    .rtl .map-overlay {
+        right: 20px;
+        max-width: none;
+    }
+}

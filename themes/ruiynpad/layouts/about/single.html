@@ -1,0 +1,90 @@
+{{ define "main" }}
+<!-- About Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Params.description }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="about-content">
+    <div class="container">
+        <div class="about-content-centered">
+            <!-- Main Introduction -->
+            <div class="about-intro">
+                <div class="intro-icon">
+                    <i class="fas fa-microscope"></i>
+                </div>
+                {{ .Content }}
+            </div>
+            
+            <!-- Key Differentiators -->
+            <div class="differentiators">
+                <h2>{{ i18n "what_makes_us_different" | default "What Makes Us Different?" }}</h2>
+                <div class="diff-grid">
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>{{ i18n "knowledge_to_action" | default "Knowledge to Action" }}</h3>
+                        <p>{{ i18n "converting_achievements" | default "Converting basic science achievements into clinically validated formulations" }}</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-dna"></i>
+                        </div>
+                        <h3>{{ i18n "intelligent_engineering" | default "Intelligent Engineering" }}</h3>
+                        <p>{{ i18n "reconstructing_cellular" | default "Reconstructing cellular ecosystem through targeted regulation of healing micro-factors" }}</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>{{ i18n "overcoming_challenges" | default "Overcoming Challenges" }}</h3>
+                        <p>{{ i18n "focusing_resistant" | default "Focusing on resistant wounds with multi-mechanistic approaches" }}</p>
+                    </div>
+                    <div class="diff-card">
+                        <div class="diff-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>{{ i18n "quality_excellence" | default "Quality Excellence" }}</h3>
+                        <p>{{ i18n "production_to_patient" | default "From production line to patient bedside, under stringent global standards" }}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mission Section -->
+            <div class="mission-statement">
+                <div class="mission-header">
+                    <div class="mission-icon-large">
+                        <i class="fas fa-heart-medical"></i>
+                    </div>
+                    <h2>{{ i18n "mission_beyond_business" | default "A Mission Beyond Business" }}</h2>
+                </div>
+                <p class="mission-text">{{ i18n "believe_effective_treatment" | default "We believe effective wound treatment is a human right for every patient. Therefore:" }}</p>
+                
+                <div class="commitments">
+                    <div class="commitment-item">
+                        <i class="fas fa-university"></i>
+                        <h4>{{ i18n "research_collaboration" | default "Research Collaboration" }}</h4>
+                        <p>{{ i18n "collaborate_universities" | default "We collaborate with universities and research centers to bring science from laboratory to wound bedside." }}</p>
+                    </div>
+                    <div class="commitment-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <h4>{{ i18n "practical_innovation" | default "Practical Innovation" }}</h4>
+                        <p>{{ i18n "respond_therapists" | default "We respond to therapists' needs with practical innovations, not advertising claims." }}</p>
+                    </div>
+                    <div class="commitment-item">
+                        <i class="fas fa-vial"></i>
+                        <h4>{{ i18n "evidence_based" | default "Evidence-Based" }}</h4>
+                        <p>{{ i18n "test_effectiveness" | default "We test effectiveness of each product before release in real-world environments." }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

@@ -1,0 +1,110 @@
+{{ define "main" }}
+<!-- Contact Hero -->
+<section class="page-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Params.description }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-form">
+                <h2>{{ i18n "send_message" }}</h2>
+                <form id="contactForm" netlify-honeypot="bot-field" netlify>
+                    <div class="form-group">
+                        <label for="name">{{ i18n "full_name" }}</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">{{ i18n "email_address" }}</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">{{ i18n "phone_number" }}</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">{{ i18n "subject" }}</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">{{ i18n "select_subject" }}</option>
+                            <option value="product">{{ i18n "product_inquiry" }}</option>
+                            <option value="support">{{ i18n "technical_support" }}</option>
+                            <option value="sales">{{ i18n "sales_question" }}</option>
+                            <option value="partnership">{{ i18n "partnership_opportunity" }}</option>
+                            <option value="other">{{ i18n "other" }}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">{{ i18n "message" }}</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">{{ i18n "send_message" }}</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h2>{{ i18n "contact_info" }}</h2>
+                
+                {{ with .Site.Params.contact }}
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>{{ i18n "headquarters" }}</h3>
+                        <p>{{ .address | safeHTML }}</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>{{ i18n "phone_number" }}</h3>
+                        <p><bdi dir="ltr">{{ .phone }}</bdi></p>
+                        {{ if .phone_support }}<p><bdi dir="ltr">{{ .phone_support }}</bdi> ({{ i18n "technical_support" }})</p>{{ end }}
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>{{ i18n "email_address" }}</h3>
+                        <p>{{ .email }}</p>
+                        {{ if .email_support }}<p>{{ .email_support }}</p>{{ end }}
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>{{ i18n "business_hours" }}</h3>
+                        <p>{{ .business_hours }}</p>
+                        {{ if .business_hours_extra }}<p>{{ .business_hours_extra }}</p>{{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d339.8671669137972!2d46.276804165356545!3d38.06266384567055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x401a0548a224d441%3A0x89326250fc6d010b!2z2YXYsdqp2LIg2LHYtNivINmB2LHYp9mI2LHYr9mH4oCM2YfYp9uMINiv2KfYsdmI24zbjCDYudmE2YjZhSDZvtiy2LTaqduMINiq2KjYsduM2LI!5e0!3m2!1sen!2s!4v1758911370342!5m2!1sen!2s" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

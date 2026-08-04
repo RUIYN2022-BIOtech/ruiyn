@@ -1,0 +1,87 @@
+{{ define "main" }}
+<!-- Product Hero -->
+<section class="product-hero">
+    <div class="container">
+        <div class="breadcrumb">
+            <a href='{{ "products" | absURL }}'>{{ i18n "products" }}</a> / <span>{{ .Title }}</span>
+        </div>
+        
+        <div class="product-header">
+            <h1>{{ .Title }}</h1>
+        </div>
+    </div>
+</section>
+
+<!-- Product Detail -->
+<section class="product-detail">
+    <div class="container">
+        <div class="product-detail-grid">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" id="mainImage">
+                </div>
+                
+                {{ if gt (len .Params.gallery) 0 }}
+                <div class="thumbnails">
+                    <div class="thumb active" data-image="{{ .Params.image | absURL }}">
+                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                    </div>
+                    {{ range $index, $galleryImage := .Params.gallery }}
+                    {{ $src := "" }}
+                    {{ $alt := $.Title }}
+                    {{ if reflect.IsMap $galleryImage }}
+                        {{ $src = $galleryImage.image | default "" }}
+                        {{ $alt = $galleryImage.alt | default $.Title }}
+                    {{ else }}
+                        {{ $src = $galleryImage | default "" }}
+                    {{ end }}
+                    {{ if $src }}
+                    <div class="thumb" data-image="{{ $src | absURL }}">
+                        <img src="{{ $src | absURL }}" alt="{{ $alt }}">
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            
+            <div class="product-info">                
+                {{ if .Params.features }}
+                <div class="product-features">
+                    <h3>{{ i18n "key_features" }}</h3>
+                    <ul class="feature-list">
+                        {{ range .Params.features }}
+                        <li><i class="fas fa-check-circle"></i> {{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+                
+                <div class="product-actions">
+                    {{ with .Params.digikala_link }}
+                    <div class="product-actions">
+                        <a href="{{ . }}" class="btn digikala-btn" target="_blank">
+                            <i class="fas fa-shopping-cart"></i> {{ i18n "buy_on_digikala" }}
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Description -->
+<section class="product-description">
+    <div class="container">
+        <div class="full-description">
+            {{ .Content }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<!-- Scripts handled by main.js -->
+{{ end }}

@@ -1,0 +1,76 @@
+{{ define "main" }}
+<!-- Products Hero -->
+<!-- <section class="page-hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>{{ .Title }}</h1>
+            <p>{{ .Description }}</p>
+        </div>
+    </div>
+</section> -->
+
+<!-- Products Section -->
+<section class="products">
+    <div class="container">
+        <div class="section-title text-center">
+            <h2>{{ i18n "categories" }}</h2>
+        </div>
+        
+        <!-- Dynamic Category filter -->
+        <div class="category-filter">
+            <button class="filter-btn active" data-filter="all">{{ i18n "all_products" }}</button>
+            {{ $categories := slice }}
+            {{ range .Pages }}
+                {{ if .Params.category }}
+                    {{ $categories = $categories | append .Params.category }}
+                {{ end }}
+            {{ end }}
+            {{ range ($categories | uniq) }}
+            <button class="filter-btn" data-filter="{{ . | urlize }}">{{ . }}</button>
+            {{ end }}
+        </div>
+        
+        <!-- Products grid -->
+        <div class="products-grid">
+            {{ range .Pages }}
+            <div class="product-card" data-category="{{ .Params.category | urlize }}">
+                <div class="product-image">
+                    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                    {{ with .Params.badge }}
+                    <div class="product-badge">{{ . }}</div>
+                    {{ end }}
+                </div>
+                <div class="product-info">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                    <p class="product-desc">{{ .Description }}</p>
+                    <div class="product-meta">
+                        <span class="product-category">{{ .Params.category }}</span>
+                        {{ with .Params.rating }}
+                        <span class="product-rating">
+                            <i class="fas fa-star"></i> {{ . }}
+                        </span>
+                        {{ end }}
+                    </div>
+                    <a href="{{ .Permalink }}" class="btn btn-outline">{{ i18n "view_details" }}</a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<!-- <section class="cta">
+    <div class="container">
+        <div class="cta-content">
+            <h2>{{ i18n "cant_find" }}</h2>
+            <p>{{ i18n "contact_specialists" }}</p>
+            <a href='{{ "contact" | absLangURL }}' class="btn">{{ i18n "request_consultation" }}</a>
+        </div>
+    </div>
+</section> -->
+{{ end }}
+
+{{ define "scripts" }}
+<!-- Scripts handled by main.js -->
+{{ end }}

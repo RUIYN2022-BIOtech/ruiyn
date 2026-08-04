@@ -1,0 +1,48 @@
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="{{ .Site.BaseURL }}">
+                <img src='{{ "img/ruiyn-logo1.png" | absURL }}' alt="Ruiyn Pad" class="logo-img">
+            </a>
+        </div>
+        
+        <nav id="mainNav">
+            <ul>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                    <li>
+                        <a href="{{ .URL | absLangURL }}" 
+                           class='{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}'
+                           {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}>
+                            {{ .Name }}
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+        
+        <div class="nav-actions">
+            {{ $targetLang := cond (eq .Language.Lang "fa") "en" "fa" }}
+            {{ $targetPage := "" }}
+            {{ range .Translations }}
+                {{ if eq .Language.Lang $targetLang }}
+                    {{ $targetPage = .RelPermalink }}
+                {{ end }}
+            {{ end }}
+            {{ if not $targetPage }}
+                {{ $targetPage = cond (eq $targetLang "en") "/en/" "/" }}
+            {{ end }}
+            <div class="lang-switcher">
+                <a href="{{ $targetPage }}" class="lang-toggle" id="langToggle"
+                   data-lang="{{ .Language.Lang }}" aria-label="Switch language">
+                    <span class="lang-toggle-thumb"></span>
+                    <span class="lang-option lang-option-fa">فا</span>
+                    <span class="lang-option lang-option-en">EN</span>
+                </a>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
