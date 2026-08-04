@@ -3,7 +3,7 @@
 <section class="product-hero">
     <div class="container">
         <div class="breadcrumb">
-            <a href='{{ "products" | absURL }}'>{{ i18n "products" }}</a> / <span>{{ .Title }}</span>
+            <a href='{{ "products" | relLangURL }}'>{{ i18n "products" }}</a> / <span>{{ .Title }}</span>
         </div>
         
         <div class="product-header">
@@ -18,13 +18,13 @@
         <div class="product-detail-grid">
             <div class="product-gallery">
                 <div class="main-image">
-                    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}" id="mainImage">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}" id="mainImage">>
                 </div>
                 
                 {{ if gt (len .Params.gallery) 0 }}
                 <div class="thumbnails">
-                    <div class="thumb active" data-image="{{ .Params.image | absURL }}">
-                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                    <div class="thumb active" data-image="{{ .Params.image | relURL }}">
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">
                     </div>
                     {{ range $index, $galleryImage := .Params.gallery }}
                     {{ $src := "" }}
@@ -36,8 +36,8 @@
                         {{ $src = $galleryImage | default "" }}
                     {{ end }}
                     {{ if $src }}
-                    <div class="thumb" data-image="{{ $src | absURL }}">
-                        <img src="{{ $src | absURL }}" alt="{{ $alt }}">
+                    <div class="thumb" data-image="{{ $src | relURL }}">
+                        <img src="{{ $src | relURL }}" alt="{{ $alt }}">
                     </div>
                     {{ end }}
                     {{ end }}

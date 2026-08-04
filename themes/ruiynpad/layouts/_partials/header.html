@@ -2,7 +2,7 @@
     <div class="container header-container">
         <div class="logo">
             <a href="{{ .Site.BaseURL }}">
-                <img src='{{ "img/ruiyn-logo1.png" | absURL }}' alt="Ruiyn Pad" class="logo-img">
+                <img src='{{ "img/ruiyn-logo1.png" | relURL }}' alt="Ruiyn Pad" class="logo-img">
             </a>
         </div>
         
@@ -11,7 +11,7 @@
                 {{ $currentPage := . }}
                 {{ range .Site.Menus.main }}
                     <li>
-                        <a href="{{ .URL | absLangURL }}" 
+                        <a href="{{ .URL | relLangURL }}" 
                            class='{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}active{{ end }}'
                            {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}>
                             {{ .Name }}

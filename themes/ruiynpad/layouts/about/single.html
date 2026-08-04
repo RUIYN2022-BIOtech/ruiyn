@@ -4,7 +4,7 @@
     <div class="container">
         <div class="hero-content">
             <h1>{{ .Title }}</h1>
-            <p>{{ .Params.description }}</p>
+            {{ with .Params.description }}<p>{{ . }}</p>{{ end }}
         </div>
     </div>
 </section>
@@ -15,75 +15,52 @@
         <div class="about-content-centered">
             <!-- Main Introduction -->
             <div class="about-intro">
-                <div class="intro-icon">
-                    <i class="fas fa-microscope"></i>
-                </div>
                 {{ .Content }}
             </div>
             
-            <!-- Key Differentiators -->
-            <div class="differentiators">
-                <h2>{{ i18n "what_makes_us_different" | default "What Makes Us Different?" }}</h2>
-                <div class="diff-grid">
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-brain"></i>
+            <!-- Team Section -->
+            {{ with .Site.Language.Params.team }}
+            <div class="team-section">
+                <div class="section-header">
+                    <h2>{{ i18n "our_team" }}</h2>
+                    <p>{{ i18n "team_subtitle" }}</p>
+                </div>
+                {{ $ceo := index .members 0 }}
+                {{ $staff := after 1 .members }}
+                <!-- CEO / Featured Member (centered, single) -->
+                <div class="team-featured">
+                    <div class="team-card">
+                        {{ if $ceo.image }}
+                        <div class="team-image">
+                            <img src="{{ $ceo.image | relURL }}" alt="{{ $ceo.name }}" loading="lazy">>
                         </div>
-                        <h3>{{ i18n "knowledge_to_action" | default "Knowledge to Action" }}</h3>
-                        <p>{{ i18n "converting_achievements" | default "Converting basic science achievements into clinically validated formulations" }}</p>
-                    </div>
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-dna"></i>
+                        {{ end }}
+                        <div class="team-info">
+                            <h3>{{ $ceo.name }}</h3>
+                            <span class="team-role">{{ $ceo.role }}</span>
                         </div>
-                        <h3>{{ i18n "intelligent_engineering" | default "Intelligent Engineering" }}</h3>
-                        <p>{{ i18n "reconstructing_cellular" | default "Reconstructing cellular ecosystem through targeted regulation of healing micro-factors" }}</p>
-                    </div>
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>{{ i18n "overcoming_challenges" | default "Overcoming Challenges" }}</h3>
-                        <p>{{ i18n "focusing_resistant" | default "Focusing on resistant wounds with multi-mechanistic approaches" }}</p>
-                    </div>
-                    <div class="diff-card">
-                        <div class="diff-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3>{{ i18n "quality_excellence" | default "Quality Excellence" }}</h3>
-                        <p>{{ i18n "production_to_patient" | default "From production line to patient bedside, under stringent global standards" }}</p>
                     </div>
                 </div>
+                <!-- Staff Members (2 per row) -->
+                {{ if $staff }}
+                <div class="team-grid staff-grid">
+                    {{ range $staff }}
+                    <div class="team-card">
+                        {{ if .image }}
+                        <div class="team-image">
+                            <img src="{{ .image | relURL }}" alt="{{ .name }}" loading="lazy">>
+                        </div>
+                        {{ end }}
+                        <div class="team-info">
+                            <h3>{{ .name }}</h3>
+                            <span class="team-role">{{ .role }}</span>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
             </div>
-            
-            <!-- Mission Section -->
-            <div class="mission-statement">
-                <div class="mission-header">
-                    <div class="mission-icon-large">
-                        <i class="fas fa-heart-medical"></i>
-                    </div>
-                    <h2>{{ i18n "mission_beyond_business" | default "A Mission Beyond Business" }}</h2>
-                </div>
-                <p class="mission-text">{{ i18n "believe_effective_treatment" | default "We believe effective wound treatment is a human right for every patient. Therefore:" }}</p>
-                
-                <div class="commitments">
-                    <div class="commitment-item">
-                        <i class="fas fa-university"></i>
-                        <h4>{{ i18n "research_collaboration" | default "Research Collaboration" }}</h4>
-                        <p>{{ i18n "collaborate_universities" | default "We collaborate with universities and research centers to bring science from laboratory to wound bedside." }}</p>
-                    </div>
-                    <div class="commitment-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h4>{{ i18n "practical_innovation" | default "Practical Innovation" }}</h4>
-                        <p>{{ i18n "respond_therapists" | default "We respond to therapists' needs with practical innovations, not advertising claims." }}</p>
-                    </div>
-                    <div class="commitment-item">
-                        <i class="fas fa-vial"></i>
-                        <h4>{{ i18n "evidence_based" | default "Evidence-Based" }}</h4>
-                        <p>{{ i18n "test_effectiveness" | default "We test effectiveness of each product before release in real-world environments." }}</p>
-                    </div>
-                </div>
-            </div>
+            {{ end }}
         </div>
     </div>
 </section>

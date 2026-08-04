@@ -8,18 +8,18 @@
             <div class="footer-col">
                 <div class="footer-logo">
                     <a href="{{ .Site.BaseURL }}">
-                        <img src='{{ "img/ruiyn-logo1.png" | absURL }}' alt="Ruiyn Pad" class="logo-img" style="height: 50px;">
+                        <img src='{{ "img/ruiyn-logo1.png" | relURL }}' alt="Ruiyn Pad" class="logo-img" style="height: 50px;">
                     </a>
                 </div>
                 <p class="footer-description">{{ i18n "footer_description" }}</p>
                 <div class="social-links">
-                    <a href="https://wa.me/989123456789" target="_blank" rel="noopener" aria-label="WhatsApp">
+                    <a href="https://wa.me/message/JH4RFGNRPJZJO1" target="_blank" rel="noopener" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                     <a href="https://t.me/RUIYN_official" target="_blank" rel="noopener" aria-label="Telegram">
                         <i class="fab fa-telegram"></i>
                     </a>
-                    <a href="https://instagram.com/ruiynpad" target="_blank" rel="noopener" aria-label="Instagram">
+                    <a href="https://instagram.com/ruiyn_official" target="_blank" rel="noopener" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
                 </div>
@@ -29,10 +29,10 @@
             <div class="footer-col">
                 <h3>{{ i18n "quick_links" }}</h3>
                 <ul class="footer-links">
-                    <li><a href='{{ "/" | absLangURL }}'>{{ i18n "home" }}</a></li>
-                    <li><a href='{{ "products" | absLangURL }}'>{{ i18n "products" }}</a></li>
-                    <li><a href='{{ "about" | absLangURL }}'>{{ i18n "about" }}</a></li>
-                    <li><a href='{{ "contact" | absLangURL }}'>{{ i18n "contact" }}</a></li>
+                    <li><a href='{{ "/" | relLangURL }}'>{{ i18n "home" }}</a></li>
+                    <li><a href='{{ "products" | relLangURL }}'>{{ i18n "products" }}</a></li>
+                    <li><a href='{{ "about" | relLangURL }}'>{{ i18n "about" }}</a></li>
+                    <li><a href='{{ "contact" | relLangURL }}'>{{ i18n "contact" }}</a></li>
                 </ul>
             </div>
 

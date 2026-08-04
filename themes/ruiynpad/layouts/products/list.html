@@ -35,7 +35,7 @@
             {{ range .Pages }}
             <div class="product-card" data-category="{{ .Params.category | urlize }}">
                 <div class="product-image">
-                    <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">>
                     {{ with .Params.badge }}
                     <div class="product-badge">{{ . }}</div>
                     {{ end }}

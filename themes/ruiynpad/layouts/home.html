@@ -4,13 +4,13 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <img src='{{ "img/ruiyn-logo2.png" | absURL }}' alt="Ruiyn Logo" class="hero-logo-img">
+                    <img src='{{ "img/ruiyn-logo2.png" | relURL }}' alt="Ruiyn Logo" class="hero-logo-img">
                 </div>
                 <h1>{{ .Params.hero_title | default "Innovative Medical Solutions" }}</h1>
                 <p>{{ .Params.hero_description | default "Delivering cutting-edge medical equipment worldwide" }}</p>
                 <div class="hero-btns">
-                    <a href='{{ "products" | absURL }}' class="btn">{{ .Params.hero_button_primary | default "Explore Products" }}</a>
-                    <a href='{{ "contact" | absURL }}' class="btn btn-outline">{{ .Params.hero_button_secondary | default "Contact Us" }}</a>
+                    <a href='{{ "products" | relLangURL }}' class="btn">{{ .Params.hero_button_primary | default "Explore Products" }}</a>
+                    <a href='{{ "contact" | relLangURL }}' class="btn btn-outline">{{ .Params.hero_button_secondary | default "Contact Us" }}</a>
                 </div>
             </div>
         </div>
@@ -47,11 +47,12 @@
             
             <div class="gallery-slider">
                 <div class="slides" id="slides">
+                    <!-- Product slides -->
                     {{ $count := 0 }}
                     {{ range (where .Site.RegularPages "Section" "products") }}
                     {{ if .Params.image }}
                     <div class="slide">
-                        <img src="{{ .Params.image | absURL }}" alt="{{ .Title }}">
+                        <img src="{{ .Params.image | relURL }}" alt="{{ .Title }}">>
                         <div class="slide-caption">
                             <h3>{{ .Title }}</h3>
                             <a href="{{ .Permalink }}" class="btn-slide" aria-label="{{ i18n "view_details" }}">
@@ -61,6 +62,21 @@
                     </div>
                     {{ $count = add $count 1 }}
                     {{ end }}
+                    {{ end }}
+                    <!-- Event slides from config -->
+                    {{ range .Site.Params.gallery_images }}
+                    <div class="slide">
+                        <img src="{{ .image | relURL }}" alt="{{ .title }}">>
+                        <div class="slide-caption">
+                            <h3>{{ .title }}</h3>
+                            {{ if .link }}
+                            <a href="{{ .link }}" class="btn-slide" aria-label="{{ i18n "view_details" }}">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            {{ end }}
+                        </div>
+                    </div>
+                    {{ $count = add $count 1 }}
                     {{ end }}
                 </div>
             </div>
@@ -72,6 +88,10 @@
                 <div class="slider-dot {{ if eq $dotCount 0 }}active{{ end }}" data-index="{{ $dotCount }}"></div>
                 {{ $dotCount = add $dotCount 1 }}
                 {{ end }}
+                {{ end }}
+                {{ range .Site.Params.gallery_images }}
+                <div class="slider-dot {{ if eq $dotCount 0 }}active{{ end }}" data-index="{{ $dotCount }}"></div>
+                {{ $dotCount = add $dotCount 1 }}
                 {{ end }}
             </div>
         </div>
