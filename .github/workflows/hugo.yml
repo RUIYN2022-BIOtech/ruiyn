@@ -35,12 +35,17 @@ jobs:
       - name: Compute baseURL
         id: baseurl
         run: |
-          OWNER="${{ github.repository_owner }}"
-          REPO="${{ github.event.repository.name }}"
-          if [ "$REPO" = "$OWNER.github.io" ]; then
-            echo "url=https://$OWNER.github.io/" >> "$GITHUB_OUTPUT"
+          CUSTOM="${{ vars.SITE_BASEURL }}"
+          if [ -n "$CUSTOM" ]; then
+            echo "url=$CUSTOM" >> "$GITHUB_OUTPUT"
           else
-            echo "url=https://$OWNER.github.io/$REPO/" >> "$GITHUB_OUTPUT"
+            OWNER="${{ github.repository_owner }}"
+            REPO="${{ github.event.repository.name }}"
+            if [ "$REPO" = "$OWNER.github.io" ]; then
+              echo "url=https://$OWNER.github.io/" >> "$GITHUB_OUTPUT"
+            else
+              echo "url=https://$OWNER.github.io/$REPO/" >> "$GITHUB_OUTPUT"
+            fi
           fi
 
       - name: Build with Hugo
