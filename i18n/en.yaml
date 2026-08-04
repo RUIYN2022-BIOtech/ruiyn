@@ -1,0 +1,86 @@
+- id: home
+  translation: "Home"
+- id: products
+  translation: "Products"
+- id: about
+  translation: "About Us"
+- id: contact
+  translation: "Contact"
+- id: read_more
+  translation: "Read More"
+- id: view_details
+  translation: "View Details"
+- id: categories
+  translation: "Products"
+- id: all_products
+  translation: "All Products"
+- id: our_products
+  translation: "Images and Events"
+- id: explore_our_products
+  translation: "Explore our specialized medical equipment"
+- id: cant_find
+  translation: "Can't Find What You Need?"
+- id: contact_specialists
+  translation: "Contact our specialists for customized medical equipment solutions"
+- id: request_consultation
+  translation: "Request Consultation"
+- id: send_message
+  translation: "Send Message"
+- id: contact_info
+  translation: "Contact Information"
+- id: headquarters
+  translation: "Headquarters"
+- id: business_hours
+  translation: "Business Hours"
+- id: full_name
+  translation: "Full Name"
+- id: email_address
+  translation: "Email Address"
+- id: phone_number
+  translation: "Phone Number"
+- id: subject
+  translation: "Subject"
+- id: message
+  translation: "Message"
+- id: select_subject
+  translation: "Select a subject"
+- id: product_inquiry
+  translation: "Product Inquiry"
+- id: technical_support
+  translation: "Technical Support"
+- id: sales_question
+  translation: "Sales Question"
+- id: partnership_opportunity
+  translation: "Partnership Opportunity"
+- id: other
+  translation: "Other"
+- id: key_features
+  translation: "Key Features"
+- id: buy_on_digikala
+  translation: "Buy on Digikala"
+- id: description
+  translation: "Description"
+- id: specifications
+  translation: "Specifications"
+- id: no_specs
+  translation: "No specifications available for this product."
+- id: quick_links
+  translation: "Quick Links"
+- id: all_rights_reserved
+  translation: "All rights reserved."
+- id: footer_description
+  translation: "Providing innovative medical solutions for healthcare providers worldwide"
+- id: location
+  translation: "Tabriz, Iran"
+- id: our_story
+  translation: "Our Story"
+- id: leadership_team
+  translation: "Leadership Team"
+- id: experts_driving
+  translation: "The experts driving our innovation"
+- id: certifications_accreditations
+  translation: "Certifications & Accreditations"
+- id: meeting_highest_standards
+  translation: "Meeting the highest standards of quality and safety"
+- id: map_headquarters
+  translation: "Ruiyn Headquarters"

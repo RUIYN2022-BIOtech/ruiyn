@@ -1,0 +1,162 @@
+baseURL = "/"
+languageCode = "fa-ir"
+title = "جایی که جوانه‌ها زره می‌شوند"
+theme = "ruiynpad"
+defaultContentLanguage = "fa"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    title = "where buds become armor"
+    weight = 2
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "Providing innovative medical solutions for healthcare providers worldwide since 2005."
+      
+      [languages.en.params.contact]
+        address = "Tabriz University of Medical Sciences, Tabriz, Iran"
+        phone = "+98 2193113900"
+        phone_support = "+98 2193113900"
+        email = "ruiyn.official@gmail.com"
+        email_support = "ruiyn.official@gmail.com"
+        business_hours = "Saturday-Wednesday: 8:00 AM - 6:00 PM"
+        business_hours_extra = "Thursday: 8:00 AM - 4:00 PM"
+
+      [[languages.en.params.features]]
+        icon = "fas fa-flask"
+        title = "Innovation"
+        description = "We are continuously trying to develop solutions that improve patient outcomes and streamline healthcare delivery."
+
+      [[languages.en.params.features]]
+        icon = "fas fa-certificate"
+        title = "Quality"
+        description = "Every product undergoes rigorous testing to meet international standards, ensuring reliability and safety in critical healthcare environments."
+
+      [[languages.en.params.features]]
+        icon = "fas fa-hands-helping"
+        title = "Partnership"
+        description = "We work closely with healthcare providers to understand their challenges and develop customized solutions that address specific needs."
+
+      [[languages.en.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1581595219319-48e360d8a3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+        title = "Advanced Imaging Systems"
+        description = "High-resolution diagnostic equipment for precise medical imaging"
+
+      [[languages.en.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1584118624012-df056829fbd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+        title = "Surgical Solutions"
+        description = "Precision instruments for minimally invasive procedures"
+
+      [[languages.en.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80"
+        title = "Patient Monitoring"
+        description = "Real-time vital sign tracking for enhanced patient care"
+
+    [[languages.en.menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 10
+      pre = "<i class='fas fa-home'></i>"
+
+    [[languages.en.menu.main]]
+      name = "Products"
+      url = "/products/"
+      weight = 20
+      pre = "<i class='fas fa-medkit'></i>"
+
+    [[languages.en.menu.main]]
+      name = "About Us"
+      url = "/about/"
+      weight = 30
+      pre = "<i class='fas fa-info-circle'></i>"
+
+    [[languages.en.menu.main]]
+      name = "Contact"
+      url = "/contact/"
+      weight = 40
+      pre = "<i class='fas fa-envelope'></i>"
+
+  [languages.fa]
+    languageName = "فارسی"
+    title = "جایی که جوانه‌ها زره می‌شوند"
+    weight = 1
+    contentDir = "content/fa"
+    languageDirection = "rtl"
+    [languages.fa.params]
+      description = "ارائه راهکارهای نوین پزشکی برای ارائه‌دهندگان مراقبت‌های بهداشتی در سراسر جهان از سال ۲۰۰۵."
+      
+      [languages.fa.params.contact]
+        address = "تبریز - خیابان پاستورقدیم (مابین شریعتی ولاله زار) مجتمع مراکز رشد فناوري فرآورده هاي دارویی دانشگاه علوم پزشکی تبریز"
+        phone = "+98 2193113900"
+        phone_support = "+98 2193113900"
+        email = "ruiyn.official@gmail.com"
+        email_support = "ruiyn.official@gmail.com"
+        business_hours = "شنبه تا چهارشنبه ۸ الی ۱۸"
+        business_hours_extra = "پنجشنبه ۸ الی ۱۶"
+
+      [[languages.fa.params.features]]
+        icon = "fas fa-flask"
+        title = "نوآوری"
+        description = "ما بطور مداوم در تلاشیم تا راهکارهایی توسعه دهیم که نتایج بیماران را بهبود بخشیده و ارائه مراقبت های بهداشتی را تسهیل میکند"
+
+      [[languages.fa.params.features]]
+        icon = "fas fa-certificate"
+        title = "کیفیت"
+        description = "هر محصول تحت آزمایش‌های دقیق قرار می‌گیرد تا استانداردهای بین‌المللی را برآورده کند و قابلیت اطمینان و ایمنی را در محیط‌های بحرانی مراقبت‌های بهداشتی تضمین کند."
+
+      [[languages.fa.params.features]]
+        icon = "fas fa-hands-helping"
+        title = "مشارکت"
+        description = "ما به طور نزدیک با ارائه‌دهندگان مراقبت‌های بهداشتی همکاری می‌کنیم تا چالش‌های آن‌ها را درک کرده و راهکارهای سفارشی‌سازی شده‌ای توسعه دهیم که نیازهای خاص را برآورده می‌کند."
+
+      [[languages.fa.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1581595219319-48e360d8a3c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+        title = "سیستم‌های تصویربرداری پیشرفته"
+        description = "تجهیزات تشخیصی با وضوح بالا برای تصویربرداری پزشکی دقیق"
+
+      [[languages.fa.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1584118624012-df056829fbd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+        title = "راهکارهای جراحی"
+        description = "ابزارهای دقیق برای روش‌های کم‌تهاجمی"
+
+      [[languages.fa.params.gallery_slides]]
+        image = "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1630&q=80"
+        title = "مانیتورینگ بیمار"
+        description = "ردیابی علائم حیاتی در زمان واقعی برای بهبود مراقبت از بیمار"
+
+    [[languages.fa.menu.main]]
+      name = "خانه"
+      url = "/"
+      weight = 10
+      pre = "<i class='fas fa-home'></i>"
+
+    [[languages.fa.menu.main]]
+      name = "محصولات"
+      url = "/products/"
+      weight = 20
+      pre = "<i class='fas fa-medkit'></i>"
+
+    [[languages.fa.menu.main]]
+      name = "درباره ما"
+      url = "/about/"
+      weight = 30
+      pre = "<i class='fas fa-info-circle'></i>"
+
+    [[languages.fa.menu.main]]
+      name = "تماس با ما"
+      url = "/contact/"
+      weight = 40
+      pre = "<i class='fas fa-envelope'></i>"
+
+[params]
+  description = "Providing innovative medical solutions for healthcare providers worldwide since 2005."
+
+[params.contact]
+  address = "Tabriz University of Medical Sciences<br>Tabriz, Iran"
+  phone = "+98 2193113900"
+  phone_support = "+98 2193113900"
+  email = "ruiyn.official@gmail.com"
+  email_support = "ruiyn.official@gmail.com"
+  business_hours = "Saturday-Wednesday: 8:00 AM - 6:00 PM"
+  business_hours_extra = "Thursday: 8:00 AM - 4:00 PM"

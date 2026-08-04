@@ -1,0 +1,86 @@
+- id: home
+  translation: "خانه"
+- id: products
+  translation: "محصولات"
+- id: about
+  translation: "درباره ما"
+- id: contact
+  translation: "تماس"
+- id: read_more
+  translation: "ادامه مطلب"
+- id: view_details
+  translation: "مشاهده جزئیات"
+- id: categories
+  translation: "محصولات"
+- id: all_products
+  translation: "همه محصولات"
+- id: our_products
+  translation: "تصاویر و رویداد ها"
+- id: explore_our_products
+  translation: "تصاویر و رویداد ها"
+- id: cant_find
+  translation: "آنچه نیاز دارید را پیدا نکردید؟"
+- id: contact_specialists
+  translation: "با متخصصان ما برای راهکارهای سفارشی تجهیزات پزشکی تماس بگیرید"
+- id: request_consultation
+  translation: "درخواست مشاوره"
+- id: send_message
+  translation: "ارسال پیام"
+- id: contact_info
+  translation: "اطلاعات تماس"
+- id: headquarters
+  translation: "دفتر مرکزی"
+- id: business_hours
+  translation: "ساعات کاری"
+- id: full_name
+  translation: "نام کامل"
+- id: email_address
+  translation: "آدرس ایمیل"
+- id: phone_number
+  translation: "شماره تلفن"
+- id: subject
+  translation: "موضوع"
+- id: message
+  translation: "پیام"
+- id: select_subject
+  translation: "انتخاب موضوع"
+- id: product_inquiry
+  translation: "استعلام محصول"
+- id: technical_support
+  translation: "پشتیبانی فنی"
+- id: sales_question
+  translation: "سوال فروش"
+- id: partnership_opportunity
+  translation: "فرصت همکاری"
+- id: other
+  translation: "سایر"
+- id: key_features
+  translation: "ویژگی‌های کلیدی"
+- id: buy_on_digikala
+  translation: "خرید از دیجی‌کالا"
+- id: description
+  translation: "توضیحات"
+- id: specifications
+  translation: "مشخصات فنی"
+- id: no_specs
+  translation: "مشخصاتی برای این محصول ثبت نشده است."
+- id: quick_links
+  translation: "دسترسی سریع"
+- id: all_rights_reserved
+  translation: "تمامی حقوق محفوظ است."
+- id: footer_description
+  translation: "ارائه راهکارهای نوین پزشکی برای ارائه‌دهندگان مراقبت‌های بهداشتی در سراسر جهان"
+- id: location
+  translation: "تبریز، ایران"
+- id: our_story
+  translation: "داستان ما"
+- id: leadership_team
+  translation: "تیم رهبری"
+- id: experts_driving
+  translation: "کارشناسانی که نوآوری ما را هدایت می‌کنند"
+- id: certifications_accreditations
+  translation: "گواهینامه‌ها و اعتبارنامه‌ها"
+- id: meeting_highest_standards
+  translation: "رعایت بالاترین استانداردهای کیفیت و ایمنی"
+- id: map_headquarters
+  translation: "دفتر مرکزی رویین"
